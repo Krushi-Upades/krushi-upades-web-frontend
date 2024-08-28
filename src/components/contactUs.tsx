@@ -20,7 +20,7 @@ const ContactUsPage = () => {
                         <FaMapMarkerAlt className="text-green-600 w-8 h-8" />
                         <div>
                             <h3 className="text-2xl font-semibold text-gray-800">Location</h3>
-                            <p className="text-gray-600">123 Conference St, City, Country</p>
+                            <p className="text-gray-600">123 Main St, Colombo, Sri Lanka</p>
                         </div>
                     </div>
 
@@ -28,7 +28,7 @@ const ContactUsPage = () => {
                         <FaPhoneAlt className="text-green-600 w-6 h-6" />
                         <div>
                             <h3 className="text-2xl font-semibold text-gray-800">Phone</h3>
-                            <p className="text-gray-600">+1 (555) 123-4567</p>
+                            <p className="text-gray-600">+94 77 255 9633</p>
                         </div>
                     </div>
 
@@ -36,7 +36,7 @@ const ContactUsPage = () => {
                         <FaEnvelope className="text-green-600 w-6 h-6" />
                         <div>
                             <h3 className="text-2xl font-semibold text-gray-800">Email</h3>
-                            <p className="text-gray-600">info@example.com</p>
+                            <p className="text-gray-600">krushiupades@gmail.com</p>
                         </div>
                     </div>
                 </div>
