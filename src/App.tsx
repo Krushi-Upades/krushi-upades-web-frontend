@@ -4,6 +4,8 @@ import LandingPage from "./pages/landingPage.tsx";
 
 // import Register from './pages/register.tsx';
 import Login from './pages/login.tsx';
+import Dashboard from "./pages/dashboard.tsx";
+import ConfirmSignUpPage from "./pages/signupConfirmation.tsx";
 // import CreatePassowrd from './pages/createPassword.tsx';
 
 function App() {
@@ -12,8 +14,8 @@ function App() {
       <Router>
           <Routes>
               <Route path="/" element={<LandingPage />} />
-              {/*<Route path="/home" element={<LandingPage />} />*/}
-              {/*<Route path="/about-us" element={<AboutUs />} />*/}
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/signupConfirmation" element={<ConfirmSignUpPage />} />
               {/*<Route path="/register" element={<Register />} />*/}
               <Route path="/login-signup" element={<Login />} />
               {/*<Route path="/create-password" element={<CreatePassowrd />} />*/}
