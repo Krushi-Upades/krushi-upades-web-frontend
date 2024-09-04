@@ -1,10 +1,9 @@
 // import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LandingPage from "./pages/landingPage.tsx";
-
-// import Register from './pages/register.tsx';
 import Login from './pages/login.tsx';
-// import CreatePassowrd from './pages/createPassword.tsx';
+
+import Dashboard from './pages/farmers/Dashboard.tsx';
 
 function App() {
 
@@ -12,12 +11,9 @@ function App() {
       <Router>
           <Routes>
               <Route path="/" element={<LandingPage />} />
-              {/*<Route path="/home" element={<LandingPage />} />*/}
-              {/*<Route path="/about-us" element={<AboutUs />} />*/}
-              {/*<Route path="/register" element={<Register />} />*/}
               <Route path="/login-signup" element={<Login />} />
-              {/*<Route path="/create-password" element={<CreatePassowrd />} />*/}
-              {/*<Route path="/aboutUs" element={<AboutUs />} />*/}
+
+              <Route path="/farmer_dashboard" element={<Dashboard />} />
 
           </Routes>
       </Router>
