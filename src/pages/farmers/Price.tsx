@@ -22,7 +22,9 @@ const Prices = () => {
             { category: 'වම්බටු', price: '45', image: '/src/assets/images/eggplant.png' },
             { category: 'මෑකරල්', price: '15', image: '/src/assets/images/makaral.png' },
             { category: 'අමු මිරිස්', price: '60', image: '/src/assets/images/amumiris.png' },
-            { category: 'මාලු මිරිස්', price: '70', image: '/src/assets/images/malumiris.png' }
+            { category: 'මාලු මිරිස්', price: '70', image: '/src/assets/images/malumiris.png' },
+            { category: 'නිවිති', price: '60', image: '/src/assets/images/nivithi.png' },
+            { category: 'මුකුණුවැන්න', price: '70', image: '/src/assets/images/mukunuwanna.png' }
         ],
         Galle: [
             { category: 'කැරට්', price: '48', image: '/src/assets/images/carrot.png' },
@@ -34,7 +36,9 @@ const Prices = () => {
             { category: 'වම්බටු', price: '43', image: '/src/assets/images/eggplant.png' },
             { category: 'මෑකරල්', price: '17', image: '/src/assets/images/makaral.png' },
             { category: 'අමු මිරිස්', price: '58', image: '/src/assets/images/amumiris.png' },
-            { category: 'මාලු මිරිස්', price: '68', image: '/src/assets/images/malumiris.png' }
+            { category: 'මාලු මිරිස්', price: '68', image: '/src/assets/images/malumiris.png' },
+            { category: 'නිවිති', price: '60', image: '/src/assets/images/nivithi.png' },
+            { category: 'මුකුණුවැන්න', price: '70', image: '/src/assets/images/mukunuwanna.png' }
         ],
         Kandy: [
             { category: 'කැරට්', price: '50', image: '/src/assets/images/carrot.png' },
@@ -46,7 +50,9 @@ const Prices = () => {
             { category: 'වම්බටු', price: '45', image: '/src/assets/images/eggplant.png' },
             { category: 'මෑකරල්', price: '15', image: '/src/assets/images/makaral.png' },
             { category: 'අමු මිරිස්', price: '60', image: '/src/assets/images/amumiris.png' },
-            { category: 'මාලු මිරිස්', price: '70', image: '/src/assets/images/malumiris.png' }
+            { category: 'මාලු මිරිස්', price: '70', image: '/src/assets/images/malumiris.png' },
+            { category: 'නිවිති', price: '60', image: '/src/assets/images/nivithi.png' },
+            { category: 'මුකුණුවැන්න', price: '70', image: '/src/assets/images/mukunuwanna.png' }
         ],
         Jaffna: [
             { category: 'කැරට්', price: '48', image: '/src/assets/images/carrot.png' },
@@ -58,7 +64,9 @@ const Prices = () => {
             { category: 'වම්බටු', price: '43', image: '/src/assets/images/eggplant.png' },
             { category: 'මෑකරල්', price: '17', image: '/src/assets/images/makaral.png' },
             { category: 'අමු මිරිස්', price: '58', image: '/src/assets/images/amumiris.png' },
-            { category: 'මාලු මිරිස්', price: '68', image: '/src/assets/images/malumiris.png' }
+            { category: 'මාලු මිරිස්', price: '68', image: '/src/assets/images/malumiris.png' },
+            { category: 'නිවිති', price: '60', image: '/src/assets/images/nivithi.png' },
+            { category: 'මුකුණුවැන්න', price: '70', image: '/src/assets/images/mukunuwanna.png' }
         ],
         Anuradhapura: [
             { category: 'කැරට්', price: '50', image: '/src/assets/images/carrot.png' },
@@ -70,7 +78,9 @@ const Prices = () => {
             { category: 'වම්බටු', price: '45', image: '/src/assets/images/eggplant.png' },
             { category: 'මෑකරල්', price: '15', image: '/src/assets/images/makaral.png' },
             { category: 'අමු මිරිස්', price: '60', image: '/src/assets/images/amumiris.png' },
-            { category: 'මාලු මිරිස්', price: '70', image: '/src/assets/images/malumiris.png' }
+            { category: 'මාලු මිරිස්', price: '70', image: '/src/assets/images/malumiris.png' },
+            { category: 'නිවිති', price: '60', image: '/src/assets/images/nivithi.png' },
+            { category: 'මුකුණුවැන්න', price: '70', image: '/src/assets/images/mukunuwanna.png' }
         ],
     };
 
@@ -116,7 +126,7 @@ const Prices = () => {
                 </div>
 
                 {/* Layout for two tables */}
-                <div className="flex justify-between mt-20">
+                <div className="flex justify-between mt-10">
                     {/* Left Table */}
                     <div className="w-1/2 px-2">
                         <div className="overflow-x-auto">

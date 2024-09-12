@@ -6,6 +6,9 @@ import Login from './pages/login.tsx';
 
 import Dashboard from './pages/farmers/Dashboard.tsx';
 import Price from './pages/farmers/Price.tsx';
+// @ts-ignore
+import Consultant from './pages/farmers/Consultant.tsx';
+import Category from './pages/farmers/Category.tsx';
 
 import ConfirmSignUpPage from "./pages/signupConfirmation.tsx";
 // import CreatePassowrd from './pages/createPassword.tsx';
@@ -26,6 +29,8 @@ function App() {
 
               <Route path="/farmer_dashboard" element={<Dashboard />} />
               <Route path="/farmer_price" element={<Price />} />
+              <Route path="/farmer_consultant" element={<Consultant />} />
+              <Route path="/farmer_category" element={<Category />} />
 
           </Routes>
       </Router>

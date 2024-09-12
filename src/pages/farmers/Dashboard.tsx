@@ -29,6 +29,7 @@ const Dashboard = () => {
 
                     {/* Card 2 */}
                     <div className="w-1/3 h-[600px] bg-white shadow-lg rounded-2xl p-6 mx-4">
+                        <Link to="/farmer_consultant">
                         {/* Color bar for Consultants */}
                         <div className="w-full h-2 bg-green-500 rounded-t-md"></div>
                         <h3 className="text-2xl font-semibold mb-4 text-center">Consultants</h3>
@@ -38,10 +39,12 @@ const Dashboard = () => {
                             alt="Card 2 Image"
                             className="w-full h-96 object-cover rounded-md mt-8"
                         />
+                        </Link>
                     </div>
 
                     {/* Card 3 */}
                     <div className="w-1/3 h-[600px] bg-white shadow-lg rounded-2xl p-6 mx-4">
+                        <Link to="/farmer_category">
                         {/* Color bar for Categories */}
                         <div className="w-full h-2 bg-red-500 rounded-t-md"></div>
                         <h3 className="text-2xl font-semibold mb-4 text-center">Categories</h3>
@@ -51,6 +54,7 @@ const Dashboard = () => {
                             alt="Card 3 Image"
                             className="w-full h-96 object-cover rounded-md mt-8"
                         />
+                        </Link>
                     </div>
                 </div>
             </div>
