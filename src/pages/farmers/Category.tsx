@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";  // Import the Link component for navigation
 import Navbar from "./Navbar.tsx";
 
 const Category = () => {
@@ -62,19 +63,20 @@ const Category = () => {
                 {/* Cards container */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 px-20">
                     {vegetables.map((vegetable, index) => (
-                        <div
-                            key={index}
-                            className="bg-green-50 shadow-lg rounded-2xl p-6 flex flex-col items-center"
-                        >
-                            {/* Vegetable Image */}
-                            <img
-                                src={vegetable.image}
-                                alt={vegetable.name}
-                                className="w-32 h-32 object-cover mb-4"
-                            />
-                            {/* Vegetable Name */}
-                            <h2 className="text-xl font-semibold">{vegetable.name}</h2>
-                        </div>
+                        <Link to={`/farmer_category/description/${vegetable.name}`} key={index}>
+                            <div
+                                className="bg-green-50 shadow-lg rounded-2xl p-6 flex flex-col items-center cursor-pointer"
+                            >
+                                {/* Vegetable Image */}
+                                <img
+                                    src={vegetable.image}
+                                    alt={vegetable.name}
+                                    className="w-32 h-32 object-cover mb-4"
+                                />
+                                {/* Vegetable Name */}
+                                <h2 className="text-xl font-semibold">{vegetable.name}</h2>
+                            </div>
+                        </Link>
                     ))}
                 </div>
             </div>
