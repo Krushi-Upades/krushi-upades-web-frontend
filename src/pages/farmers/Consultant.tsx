@@ -1,12 +1,12 @@
 import Navbar from "./Navbar.tsx";
-// Import necessary icons (use any icon library like FontAwesome, Material Icons, etc.)
 import { FaComments } from 'react-icons/fa';
 import { MdFeedback } from "react-icons/md";
 import { useState } from "react";
 
 const Consultants = () => {
-    // State for managing the feedback popup visibility and the selected consultant
+    // State for managing the feedback form and chat box visibility
     const [showFeedbackForm, setShowFeedbackForm] = useState(false);
+    const [showChatBox, setShowChatBox] = useState(false);
     const [selectedConsultant, setSelectedConsultant] = useState(null);
 
     // Sample data for consultants
@@ -50,14 +50,23 @@ const Consultants = () => {
     ];
 
     // Handle feedback icon click
-    const handleFeedbackClick = ({consultant}: { consultant: any }) => {
+    const handleFeedbackClick = (consultant: any) => {
         setSelectedConsultant(consultant);
         setShowFeedbackForm(true); // Show the feedback form
+        setShowChatBox(false); // Hide the chat box
     };
 
-    // Handle feedback form close
-    const handleCloseForm = () => {
+    // Handle chat icon click
+    const handleChatClick = (consultant: any) => {
+        setSelectedConsultant(consultant);
+        setShowChatBox(true); // Show the chat box
+        setShowFeedbackForm(false); // Hide the feedback form
+    };
+
+    // Handle closing the feedback form or chat box
+    const handleClose = () => {
         setShowFeedbackForm(false);
+        setShowChatBox(false);
         setSelectedConsultant(null); // Reset the selected consultant
     };
 
@@ -96,9 +105,14 @@ const Consultants = () => {
                                     className="text-green-600 cursor-pointer"
                                     title="Feedback"
                                     size={30}
-                                    onClick={() => handleFeedbackClick({consultant: consultant})} // Open feedback form
+                                    onClick={() => handleFeedbackClick(consultant)} // Open feedback form
                                 />
-                                <FaComments className="text-green-700 cursor-pointer" title="Chat" size={30} />
+                                <FaComments
+                                    className="text-green-700 cursor-pointer"
+                                    title="Chat"
+                                    size={30}
+                                    onClick={() => handleChatClick(consultant)} // Open chat box
+                                />
                             </div>
                         </div>
                     ))}
@@ -146,7 +160,7 @@ const Consultants = () => {
                                 <div className="flex justify-end space-x-4">
                                     <button
                                         type="button"
-                                        onClick={handleCloseForm}
+                                        onClick={handleClose}
                                         className="bg-gray-500 text-white px-4 py-2 rounded"
                                     >
                                         Close
@@ -159,6 +173,44 @@ const Consultants = () => {
                                     </button>
                                 </div>
                             </form>
+                        </div>
+                    </div>
+                )}
+
+                {/* Chat Box Popup */}
+                {showChatBox && selectedConsultant && (
+                    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                        <div className="bg-white p-6 rounded-lg w-96 shadow-lg relative">
+                            <h2 className="text-2xl font-semibold mb-4">Chat with {selectedConsultant["name"]}</h2>
+                            {/* Placeholder for chat content */}
+                            <div className="h-64 overflow-auto bg-gray-100 p-4 rounded mb-4">
+                                {/* Chat history can be shown here */}
+                                <p>Welcome to the chat!</p>
+                            </div>
+                            {/* Chat input */}
+                            <div className="flex">
+                                <input
+                                    type="text"
+                                    className="w-full p-2 border rounded"
+                                    placeholder="Type your message..."
+                                />
+                                <button
+                                    type="button"
+                                    className="bg-green-600 text-white px-4 py-2 rounded ml-2"
+                                >
+                                    Send
+                                </button>
+                            </div>
+                            {/* Close button */}
+                            <div className="flex justify-end mt-4">
+                                <button
+                                    type="button"
+                                    onClick={handleClose}
+                                    className="bg-gray-500 text-white px-4 py-2 rounded"
+                                >
+                                    Close Chat
+                                </button>
+                            </div>
                         </div>
                     </div>
                 )}
