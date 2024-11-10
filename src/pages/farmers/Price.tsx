@@ -84,10 +84,8 @@ const Prices = () => {
         ],
     };
 
-    // Dummy districts for dropdown
     const districts = ['Colombo', 'Galle', 'Kandy', 'Jaffna', 'Anuradhapura'];
 
-    // Function to alternate items between two tables
     const alternateItems = (items: { category: string; price: string; image: string }[]) => {
         const leftTableItems: { category: string; price: string; image: string }[] = [];
         const rightTableItems: { category: string; price: string; image: string }[] = [];
@@ -106,77 +104,70 @@ const Prices = () => {
     const { leftTableItems, rightTableItems } = alternateItems(pricesPerDistrict[selectedDistrict]);
 
     return (
-        <div className="bg-green-50 min-h-screen">
+        <div className="min-h-screen">
             <Navbar />
-            <div className="px-20 py-10 bg-green-50">
-                {/* Topic and Dropdown in one horizontal line */}
-                <div className="flex justify-center items-center mb-10">
-                    <h1 className="text-3xl font-bold mx-10">Prices per District</h1>
-                    <select
-                        value={selectedDistrict}
-                        onChange={handleDistrictChange}
-                        className="px-4 py-2 mx-10 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
-                    >
-                        {districts.map((district, index) => (
-                            <option key={index} value={district}>
-                                {district}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-
-                {/* Layout for two tables */}
-                <div className="flex justify-between mt-10">
-                    {/* Left Table */}
-                    <div className="w-1/2 px-2">
-                        <div className="overflow-x-auto">
-                            <table className="min-w-full table-auto bg-white shadow-md rounded-2xl">
-                                <thead>
-                                <tr className="bg-gray-100">
-                                    <th className="px-4 py-2 text-left">Image</th>
-                                    <th className="px-4 py-2 text-left">Category</th>
-                                    <th className="px-4 py-2 text-left">Price (per 1kg)</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                {leftTableItems.map((item, index) => (
-                                    <tr key={index}>
-                                        <td className="px-4 py-2">
-                                            <img src={item.image} alt={item.category} className="w-16 h-16 object-cover" />
-                                        </td>
-                                        <td className="px-4 py-2">{item.category}</td>
-                                        <td className="px-4 py-2">{item.price} LKR</td>
-                                    </tr>
-                                ))}
-                                </tbody>
-                            </table>
-                        </div>
+            <div className="px-20 py-10">
+                <div className="flex flex-col items-center">
+                    <div className="w-1/2 mb-8">
+                        <label htmlFor="district-select" className="block text-lg font-bold mb-2">Select District:</label>
+                        <select
+                            id="district-select"
+                            className="w-full p-2 border border-gray-300 rounded"
+                            value={selectedDistrict}
+                            onChange={handleDistrictChange}
+                        >
+                            {districts.map(district => (
+                                <option key={district} value={district}>
+                                    {district}
+                                </option>
+                            ))}
+                        </select>
                     </div>
 
-                    {/* Right Table */}
-                    <div className="w-1/2 px-2">
-                        <div className="overflow-x-auto">
-                            <table className="min-w-full table-auto bg-white shadow-md rounded-2xl">
-                                <thead>
-                                <tr className="bg-gray-100">
-                                    <th className="px-4 py-2 text-left">Image</th>
-                                    <th className="px-4 py-2 text-left">Category</th>
-                                    <th className="px-4 py-2 text-left">Price (per 1kg)</th>
+                    <div className="flex justify-center w-full">
+                        {/* Left Table */}
+                        <table className="table-auto bg-white border border-gray-200 mr-10 w-1/2">
+                            <thead>
+                            <tr>
+                                <th className="px-4 py-2 border bg-gray-100">Category</th>
+                                <th className="px-4 py-2 border bg-gray-100">Price (LKR)</th>
+                                <th className="px-4 py-2 border bg-gray-100">Image</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {leftTableItems.map((item, index) => (
+                                <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-100"}>
+                                    <td className="border px-4 py-2">{item.category}</td>
+                                    <td className="border px-4 py-2">{item.price}</td>
+                                    <td className="border px-4 py-2">
+                                        <img src={item.image} alt={item.category} className="w-14 h-14" />
+                                    </td>
                                 </tr>
-                                </thead>
-                                <tbody>
-                                {rightTableItems.map((item, index) => (
-                                    <tr key={index}>
-                                        <td className="px-4 py-2">
-                                            <img src={item.image} alt={item.category} className="w-16 h-16 object-cover" />
-                                        </td>
-                                        <td className="px-4 py-2">{item.category}</td>
-                                        <td className="px-4 py-2">{item.price} LKR</td>
-                                    </tr>
-                                ))}
-                                </tbody>
-                            </table>
-                        </div>
+                            ))}
+                            </tbody>
+                        </table>
+
+                        {/* Right Table */}
+                        <table className="table-auto bg-white border border-gray-200 w-1/2">
+                            <thead>
+                            <tr>
+                                <th className="px-4 py-2 border bg-gray-100">Category</th>
+                                <th className="px-4 py-2 border bg-gray-100">Price (LKR)</th>
+                                <th className="px-4 py-2 border bg-gray-100">Image</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {rightTableItems.map((item, index) => (
+                                <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-100"}>
+                                    <td className="border px-4 py-2">{item.category}</td>
+                                    <td className="border px-4 py-2">{item.price}</td>
+                                    <td className="border px-4 py-2">
+                                        <img src={item.image} alt={item.category} className="w-14 h-14" />
+                                    </td>
+                                </tr>
+                            ))}
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

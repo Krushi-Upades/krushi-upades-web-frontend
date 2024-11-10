@@ -54,7 +54,7 @@ const Category = () => {
     ];
 
     return (
-        <div className="bg-green-50 min-h-screen">
+        <div className="min-h-screen">
             <Navbar /> {/* Include your navbar here */}
             <div className="py-10">
                 <h1 className="text-center text-3xl font-bold mb-10">Vegetable Categories</h1>
@@ -64,7 +64,7 @@ const Category = () => {
                     {vegetables.map((vegetable, index) => (
                         <div
                             key={index}
-                            className="bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center"
+                            className="bg-green-50 shadow-lg rounded-2xl p-6 flex flex-col items-center"
                         >
                             {/* Vegetable Image */}
                             <img
