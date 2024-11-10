@@ -3,23 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 const Navbar = () => {
     const navigate = useNavigate();
 
-    const handleLoginClick = () => {
-        navigate('/login-signup?form=login');
-    };
-
-    const handleRegisterClick = () => {
-        navigate('/login-signup?form=signup');
-    };
-
     return (
         <nav className="bg-white sticky top-0 z-50 px-5 shadow-md">
             <div className="w-full mx-auto">
                 <div className="flex items-center justify-between h-16">
-                    {/* Logo and Text Section */}
                     <div className="flex items-center space-x-2">
                         <img className="h-16 w-32" src="src/assets/images/logo.png" alt="Logo" />
                     </div>
-                    {/* Navigation and Buttons */}
                     <div className="flex items-center space-x-4 ml-auto">
                         <div className="hidden md:flex space-x-4">
                             <Link to="/home" className="relative text-green-700 px-2 py-2 rounded-md text-lg font-medium group cursor-pointer">
@@ -41,13 +31,13 @@ const Navbar = () => {
                         </div>
                         <div className="flex space-x-4">
                             <button
-                                onClick={handleLoginClick}
+                                onClick={() => navigate('/login')}
                                 className="bg-green-700 text-white hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
                             >
                                 Login
                             </button>
                             <button
-                                onClick={handleRegisterClick}
+                                onClick={() => navigate('/signup')}
                                 className="bg-green-700 text-white hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
                             >
                                 Register

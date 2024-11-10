@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Dashboard = () => {
     return (
-        <div className="h-screen bg-green-50">
+        <div className="h-screen">
             {/* Navbar Component */}
             <Navbar />
 
@@ -13,7 +13,7 @@ const Dashboard = () => {
                 {/* Cards Section */}
                 <div className="flex justify-between w-full px-20 mt-10">
                     {/* Card 1 */}
-                    <div className="w-1/3 h-[600px] bg-white shadow-lg rounded-2xl p-6 mx-4">
+                    <div className="w-1/3 h-[600px] bg-green-50 shadow-lg rounded-2xl p-6 mx-4">
                         <Link to="/farmer_price">
                             {/* Color bar for Prices */}
                             <div className="w-full h-2 bg-blue-500 rounded-t-md"></div>
@@ -28,7 +28,7 @@ const Dashboard = () => {
                     </div>
 
                     {/* Card 2 */}
-                    <div className="w-1/3 h-[600px] bg-white shadow-lg rounded-2xl p-6 mx-4">
+                    <div className="w-1/3 h-[600px] bg-green-50 shadow-lg rounded-2xl p-6 mx-4">
                         <Link to="/farmer_consultant">
                         {/* Color bar for Consultants */}
                         <div className="w-full h-2 bg-green-500 rounded-t-md"></div>
@@ -43,7 +43,7 @@ const Dashboard = () => {
                     </div>
 
                     {/* Card 3 */}
-                    <div className="w-1/3 h-[600px] bg-white shadow-lg rounded-2xl p-6 mx-4">
+                    <div className="w-1/3 h-[600px] bg-green-50 shadow-lg rounded-2xl p-6 mx-4">
                         <Link to="/farmer_category">
                         {/* Color bar for Categories */}
                         <div className="w-full h-2 bg-red-500 rounded-t-md"></div>

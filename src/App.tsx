@@ -1,8 +1,8 @@
 // import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LandingPage from "./pages/landingPage.tsx";
-import Login from './pages/login.tsx';
-
+import Login from './pages/login/login.tsx';
+import Signup from './pages/login/signup.tsx';
 
 import Dashboard from './pages/farmers/Dashboard.tsx';
 import Price from './pages/farmers/Price.tsx';
@@ -25,7 +25,8 @@ function App() {
               <Route path="/signupConfirmation" element={<ConfirmSignUpPage />} />
               {/*<Route path="/register" element={<Register />} />*/}
 
-              <Route path="/login-signup" element={<Login />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
 
               <Route path="/farmer_dashboard" element={<Dashboard />} />
               <Route path="/farmer_price" element={<Price />} />

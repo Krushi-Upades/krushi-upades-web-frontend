@@ -62,9 +62,9 @@ const Consultants = () => {
     };
 
     return (
-        <div className="bg-green-50 min-h-screen">
+        <div className="min-h-screen">
             <Navbar />
-            <div className="bg-green-50 py-10">
+            <div className="py-10">
                 <h1 className="text-center text-3xl font-bold mb-10">Our Consultants</h1>
 
                 {/* Cards container */}
@@ -72,7 +72,7 @@ const Consultants = () => {
                     {consultants.map((consultant, index) => (
                         <div
                             key={index}
-                            className={`relative bg-white shadow-md rounded-lg p-6 flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}
+                            className={`relative bg-green-50 shadow-md rounded-lg p-6 flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}
                         >
                             {/* Left part - Profile image */}
                             <div className="w-1/5 flex justify-center">
