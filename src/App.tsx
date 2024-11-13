@@ -6,10 +6,12 @@ import Signup from './pages/login/signup.tsx';
 
 import Dashboard from './pages/farmers/Dashboard.tsx';
 import Price from './pages/farmers/Price.tsx';
-// @ts-ignore
 import Consultant from './pages/farmers/Consultant.tsx';
 import Category from './pages/farmers/Category.tsx';
 import Description from './pages/farmers/Description.tsx';
+
+import Profile from './pages/farmers/Profile.tsx';
+import Notification from './pages/farmers/Notification.tsx';
 
 import ConfirmSignUpPage from "./pages/signupConfirmation.tsx";
 // import CreatePassowrd from './pages/createPassword.tsx';
@@ -30,6 +32,8 @@ function App() {
               <Route path="/signup" element={<Signup />} />
 
               <Route path="/farmer_dashboard" element={<Dashboard />} />
+              <Route path="/farmer_profile" element={<Profile />} />
+              <Route path="/farmer_notification" element={<Notification />} />
               <Route path="/farmer_price" element={<Price />} />
               <Route path="/farmer_consultant" element={<Consultant />} />
               <Route path="/farmer_category" element={<Category />} />
